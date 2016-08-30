@@ -1,0 +1,25 @@
+//
+//  UIScreen+NG.swift
+//  NGKit
+//
+//  Created by nagi on 16/8/9.
+//  Copyright © 2016年 aria. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+extension UIScreen{
+    
+    static func ng_width() -> CGFloat
+    {
+        struct ngStatic{ static let width = UIScreen.mainScreen().bounds.size.width }
+        return ngStatic.width
+    }
+    
+    static func ng_height() -> CGFloat
+    {
+        struct ngStatic{ static let height = UIScreen.mainScreen().bounds.size.height }
+        return ngStatic.height
+    }
+}
