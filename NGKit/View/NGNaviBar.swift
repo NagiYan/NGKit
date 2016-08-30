@@ -8,33 +8,33 @@
 
 import UIKit
 
-class NGNaviBar: UIView {
+public class NGNaviBar: UIView {
 
     // 标题栏
-    var labelTitle:UILabel!
+    public var labelTitle:UILabel!
     // 左侧按钮
-    var buttonLeft:UIButton!
+    public var buttonLeft:UIButton!
     // 右侧按钮
-    var buttonRight:UIButton!
+    public var buttonRight:UIButton!
     // 右侧按钮2
-    var buttonRight2nd:UIButton!
+    public var buttonRight2nd:UIButton!
     
     /// 左侧返回按钮图标
-    static var leftButtonImage:UIImage?;
+    public static var leftButtonImage:UIImage?;
     
     // MARK: 外部接口
     
     /**
      以默认位置尺寸创建 顶部 （0, 0, width, 64）
      */
-    init()
+    public init()
     {
         let rect = CGRectMake(0, 0, UIScreen.ng_width(), 64)
         super.init(frame: rect)
         p_init(with: rect)
     }
     
-    override init(frame: CGRect)
+    public override init(frame: CGRect)
     {
         super.init(frame: frame)
         p_init(with: frame)
@@ -43,7 +43,7 @@ class NGNaviBar: UIView {
     /**
      将按钮变成带灰底的圆形按钮
      */
-    func makeButtonRound()
+    public func makeButtonRound()
     {
         if !buttonLeft.hidden
         {
@@ -78,7 +78,7 @@ class NGNaviBar: UIView {
      
      - parameter alpha: 透明度
      */
-    func makeAlpha(with alpha:CGFloat)
+    public func makeAlpha(with alpha:CGFloat)
     {
         background.backgroundColor = background.backgroundColor?.colorWithAlphaComponent(alpha)
         line.backgroundColor = line.backgroundColor?.colorWithAlphaComponent(alpha)
@@ -90,7 +90,7 @@ class NGNaviBar: UIView {
      
      - parameter visible: 是否可见
      */
-    func setRightButtonVisible(with visible:Bool)
+    public func setRightButtonVisible(with visible:Bool)
     {
         buttonRight.hidden = !visible
         bkgRight.hidden = !visible
@@ -98,7 +98,7 @@ class NGNaviBar: UIView {
 
     // MARK:
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

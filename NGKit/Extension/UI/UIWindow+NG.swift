@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIWindow{
+public extension UIWindow{
     
     /**
      默认截屏

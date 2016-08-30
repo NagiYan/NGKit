@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIScreen{
+public extension UIScreen{
     
     static func ng_width() -> CGFloat
     {

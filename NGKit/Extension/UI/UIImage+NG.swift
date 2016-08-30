@@ -9,7 +9,7 @@
 import Foundation
 import CoreImage
 
-extension UIImage{
+public extension UIImage{
     
     /**
      黑白化图片

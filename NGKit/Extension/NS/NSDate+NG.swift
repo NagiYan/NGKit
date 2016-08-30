@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSDate {
+public extension NSDate {
     
     /**
      仅返回当天的年月日

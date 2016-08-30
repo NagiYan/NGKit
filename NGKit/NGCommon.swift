@@ -14,7 +14,7 @@ import UIKit
  
  - parameter message: 消息内容
  */
-func NSLogEx<T>(message:T, file:String = "\(#file)", line:String = "\(#line)", column:String = "\(#column)", function:String = "\(#function)")
+public func NSLogEx<T>(message:T, file:String = "\(#file)", line:String = "\(#line)", column:String = "\(#column)", function:String = "\(#function)")
 {
     #if !DEBUG
         NSLog("\(file)(\(line),\(column)) \(function) : \(message)")
@@ -22,9 +22,9 @@ func NSLogEx<T>(message:T, file:String = "\(#file)", line:String = "\(#line)", c
 }
 
 // 局部scope
-func local(closure: ()->()) {closure()}
+public func local(closure: ()->()) {closure()}
 
-func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat)->UIColor { return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a) }
+public func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat)->UIColor { return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a) }
 
 // MARK:  泛型工具
 
@@ -37,7 +37,7 @@ func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat)->UIColor { return UIColor
  - returns: 结果
  */
 @warn_unused_result
-func ng_find<T>(in array:Array<T>, @noescape isSeparator:(T) throws -> Bool) rethrows -> T?
+public func ng_find<T>(in array:Array<T>, @noescape isSeparator:(T) throws -> Bool) rethrows -> T?
 {
     let filted = try array.filter { (item) -> Bool in
         return (try isSeparator(item))

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class NGTimePickerView: UIView , UIPickerViewDataSource, UIPickerViewDelegate {
+public class NGTimePickerView: UIView , UIPickerViewDataSource,  UIPickerViewDelegate {
 
-    var pickerHour:UIPickerView!
-    var pickerMinute:UIPickerView!
-    var pickerSecond:UIPickerView!
+    public var pickerHour:UIPickerView!
+    public var pickerMinute:UIPickerView!
+    public var pickerSecond:UIPickerView!
         
-    convenience init(with frame:CGRect, time seconds:NSInteger)
+    convenience public init(with frame:CGRect, time seconds:NSInteger)
     {
         self.init(frame: frame)
         backgroundColor = UIColor.init(white: 1, alpha: 0.5)
@@ -63,7 +63,7 @@ class NGTimePickerView: UIView , UIPickerViewDataSource, UIPickerViewDelegate {
         pickerSecond.selectRow(seconds%3600%60%10, inComponent: 1, animated: true)
     }
 
-    func getTimeSeconds() -> NSInteger
+    public func getTimeSeconds() -> NSInteger
     {
         var seconds = 0
         seconds += pickerHour.selectedRowInComponent(0)*10*3600
@@ -77,23 +77,23 @@ class NGTimePickerView: UIView , UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: pickerView delegate
     
-    func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat
+    public func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat
     {
         let backView = ng_getFirstSubView(by: NGTimePickerView.tagBackground, recurison: false)
         return (backView!.frame.width - 20)/3*0.3
     }
     
-    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat
+    public func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat
     {
         return 25
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
+    public func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
     {
         return 2
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    public func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
         if pickerView == pickerHour && component == 0
         {
@@ -107,7 +107,7 @@ class NGTimePickerView: UIView , UIPickerViewDataSource, UIPickerViewDelegate {
         return 10
     }
     
-    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView
+    public func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView
     {
         let perWidth = (UIScreen.ng_width() - 20)/3*0.6
         let myView = UILabel(frame: CGRectMake(0.0, 0.0, perWidth, 30))

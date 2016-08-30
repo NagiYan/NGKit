@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - 扩展
-extension NSObject {
+public extension NSObject {
     
     static func ng_getIVars(cls: AnyClass!) -> Array<String>
     {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSFileManager{
+public extension NSFileManager{
     
     /**
      获取资源文件

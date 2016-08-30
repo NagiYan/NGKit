@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     
     /**
      变化当前颜色的透明度，目前支持 WA 和 RGBA 两种模式

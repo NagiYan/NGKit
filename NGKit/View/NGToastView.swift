@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NGToastView : UILabel
+public class NGToastView : UILabel
 {
     private static var delayCount = 0.0;
     
@@ -20,7 +20,7 @@ class NGToastView : UILabel
      - parameter second: 延时时间
      - parameter pos:    显示位置 距底部的距离
      */
-    static func show(parent view:UIView, text:String, delay second:Double = 0.0, bottom pos:Float = 150)
+    public static func show(parent view:UIView, text:String, delay second:Double = 0.0, bottom pos:Float = 150)
     {
         let toast = NGToastView(text: text, delay: second)
         view.addSubview(toast)
@@ -55,7 +55,7 @@ class NGToastView : UILabel
      - parameter second: 延时 秒
     
      */
-    convenience init(text:String, delay second:Double)
+    public convenience init(text:String, delay second:Double)
     {
         let delay = second + NGToastView.delayCount * 2.0
         NGToastView.delayCount += 1

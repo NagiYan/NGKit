@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension UIFont{
+public extension UIFont{
     
     /**
      获取某字符串的显示尺寸

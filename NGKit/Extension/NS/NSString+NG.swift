@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSString{
+public extension NSString{
 
     private static let ngMobile = "^1[3578]\\d{9}$"
     private static let ngNumberAlpha = "^(?=.*[0-9].*)(?=.*[a-zA-Z].*).{6,20}$"
