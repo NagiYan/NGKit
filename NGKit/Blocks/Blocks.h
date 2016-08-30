@@ -9,9 +9,7 @@
 #ifndef blocks_h
 #define blocks_h
 
-#import "NStimer+Blocks.h"
-#import "UIActionSheet+Block.h"
-#import "UIAlertView+Block.h"
+#import "NSTimer+Blocks.h"
 #import "UISearchBar+Blocks.h"
 
 #endif /* blocks_h */

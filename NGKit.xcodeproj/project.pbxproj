@@ -37,7 +37,6 @@
 		217977FD1D7537F900DFE4C2 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977CE1D7537F900DFE4C2 /* UITextView+Placeholder.m */; };
 		217977FE1D7537F900DFE4C2 /* UIView+NG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217977CF1D7537F900DFE4C2 /* UIView+NG.swift */; };
 		217977FF1D7537F900DFE4C2 /* UIWindow+NG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217977D01D7537F900DFE4C2 /* UIWindow+NG.swift */; };
-		217978001D7537F900DFE4C2 /* NGCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977D11D7537F900DFE4C2 /* NGCommon.h */; };
 		217978011D7537F900DFE4C2 /* NGCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217977D21D7537F900DFE4C2 /* NGCommon.swift */; };
 		217978021D7537F900DFE4C2 /* SingletonARC.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977D41D7537F900DFE4C2 /* SingletonARC.h */; };
 		217978031D7537F900DFE4C2 /* DirectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977D61D7537F900DFE4C2 /* DirectionView.h */; };
@@ -103,7 +102,6 @@
 		217977CE1D7537F900DFE4C2 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		217977CF1D7537F900DFE4C2 /* UIView+NG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+NG.swift"; sourceTree = "<group>"; };
 		217977D01D7537F900DFE4C2 /* UIWindow+NG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+NG.swift"; sourceTree = "<group>"; };
-		217977D11D7537F900DFE4C2 /* NGCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGCommon.h; sourceTree = "<group>"; };
 		217977D21D7537F900DFE4C2 /* NGCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGCommon.swift; sourceTree = "<group>"; };
 		217977D41D7537F900DFE4C2 /* SingletonARC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonARC.h; sourceTree = "<group>"; };
 		217977D61D7537F900DFE4C2 /* DirectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionView.h; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 				217977D51D7537F900DFE4C2 /* View */,
 				217977941D7537A000DFE4C2 /* NGKit.h */,
 				217977961D7537A000DFE4C2 /* Info.plist */,
-				217977D11D7537F900DFE4C2 /* NGCommon.h */,
 				217977D21D7537F900DFE4C2 /* NGCommon.swift */,
 			);
 			path = NGKit;
@@ -305,7 +302,6 @@
 				217977EA1D7537F900DFE4C2 /* NSTimer+Blocks.h in Headers */,
 				217978091D7537F900DFE4C2 /* NBlurView.h in Headers */,
 				217978051D7537F900DFE4C2 /* MBProgressHUD.h in Headers */,
-				217978001D7537F900DFE4C2 /* NGCommon.h in Headers */,
 				217978121D7537F900DFE4C2 /* TBAnimationButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,7 +557,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NGKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aria.NGKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,7 +578,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NGKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aria.NGKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
