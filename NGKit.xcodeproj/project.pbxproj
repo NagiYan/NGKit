@@ -23,8 +23,8 @@
 		217977EF1D7537F900DFE4C2 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977BD1D7537F900DFE4C2 /* CCLocationManager.m */; };
 		217977F01D7537F900DFE4C2 /* CLLocation+YCLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977BE1D7537F900DFE4C2 /* CLLocation+YCLocation.h */; };
 		217977F11D7537F900DFE4C2 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977BF1D7537F900DFE4C2 /* CLLocation+YCLocation.m */; };
-		217977F21D7537F900DFE4C2 /* NSDate+FSExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977C21D7537F900DFE4C2 /* NSDate+FSExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		217977F31D7537F900DFE4C2 /* NSDate+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977C31D7537F900DFE4C2 /* NSDate+FSExtension.m */; };
+		217977F21D7537F900DFE4C2 /* NSDate+NGFSExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977C21D7537F900DFE4C2 /* NSDate+NGFSExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		217977F31D7537F900DFE4C2 /* NSDate+NGFSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977C31D7537F900DFE4C2 /* NSDate+NGFSExtension.m */; };
 		217977F41D7537F900DFE4C2 /* NSDate+NG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217977C41D7537F900DFE4C2 /* NSDate+NG.swift */; };
 		217977F51D7537F900DFE4C2 /* NSFileManager+NG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217977C51D7537F900DFE4C2 /* NSFileManager+NG.swift */; };
 		217977F61D7537F900DFE4C2 /* NSObject+NG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217977C61D7537F900DFE4C2 /* NSObject+NG.swift */; };
@@ -88,8 +88,8 @@
 		217977BD1D7537F900DFE4C2 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
 		217977BE1D7537F900DFE4C2 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
 		217977BF1D7537F900DFE4C2 /* CLLocation+YCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+YCLocation.m"; sourceTree = "<group>"; };
-		217977C21D7537F900DFE4C2 /* NSDate+FSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+FSExtension.h"; sourceTree = "<group>"; };
-		217977C31D7537F900DFE4C2 /* NSDate+FSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+FSExtension.m"; sourceTree = "<group>"; };
+		217977C21D7537F900DFE4C2 /* NSDate+NGFSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NGFSExtension.h"; sourceTree = "<group>"; };
+		217977C31D7537F900DFE4C2 /* NSDate+NGFSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NGFSExtension.m"; sourceTree = "<group>"; };
 		217977C41D7537F900DFE4C2 /* NSDate+NG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+NG.swift"; sourceTree = "<group>"; };
 		217977C51D7537F900DFE4C2 /* NSFileManager+NG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+NG.swift"; sourceTree = "<group>"; };
 		217977C61D7537F900DFE4C2 /* NSObject+NG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+NG.swift"; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 		217977C11D7537F900DFE4C2 /* NS */ = {
 			isa = PBXGroup;
 			children = (
-				217977C21D7537F900DFE4C2 /* NSDate+FSExtension.h */,
-				217977C31D7537F900DFE4C2 /* NSDate+FSExtension.m */,
+				217977C21D7537F900DFE4C2 /* NSDate+NGFSExtension.h */,
+				217977C31D7537F900DFE4C2 /* NSDate+NGFSExtension.m */,
 				217977C41D7537F900DFE4C2 /* NSDate+NG.swift */,
 				217977C51D7537F900DFE4C2 /* NSFileManager+NG.swift */,
 				217977C61D7537F900DFE4C2 /* NSObject+NG.swift */,
@@ -287,7 +287,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				217977F21D7537F900DFE4C2 /* NSDate+FSExtension.h in Headers */,
+				217977F21D7537F900DFE4C2 /* NSDate+NGFSExtension.h in Headers */,
 				217978021D7537F900DFE4C2 /* SingletonARC.h in Headers */,
 				217977EE1D7537F900DFE4C2 /* CCLocationManager.h in Headers */,
 				217978071D7537F900DFE4C2 /* MKNumberBadgeView.h in Headers */,
@@ -427,7 +427,7 @@
 				21F1FAEC1D75523E000F900D /* NGNaviBar.swift in Sources */,
 				217977FE1D7537F900DFE4C2 /* UIView+NG.swift in Sources */,
 				217977ED1D7537F900DFE4C2 /* UISearchBar+Blocks.m in Sources */,
-				217977F31D7537F900DFE4C2 /* NSDate+FSExtension.m in Sources */,
+				217977F31D7537F900DFE4C2 /* NSDate+NGFSExtension.m in Sources */,
 				217978011D7537F900DFE4C2 /* NGCommon.swift in Sources */,
 				217977F51D7537F900DFE4C2 /* NSFileManager+NG.swift in Sources */,
 			);

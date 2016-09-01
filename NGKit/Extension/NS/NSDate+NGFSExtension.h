@@ -1,5 +1,5 @@
 //
-//  NSDate+FSExtension.h
+//  NSDate+NGFSExtension.h
 //  Pods
 //
 //  Created by Wenchao Ding on 29/1/15.
@@ -54,19 +54,19 @@
 @end
 
 
-@interface NSCalendar (FSExtension)
+@interface NSCalendar (NGFSExtension)
 
 + (instancetype)ng_fs_sharedCalendar;
 
 @end
 
-@interface NSDateFormatter (FSExtension)
+@interface NSDateFormatter (NGFSExtension)
 
 + (instancetype)ng_fs_sharedDateFormatter;
 
 @end
 
-@interface NSDateComponents (FSExtension)
+@interface NSDateComponents (NGFSExtension)
 
 + (instancetype)ng_fs_sharedDateComponents;
 

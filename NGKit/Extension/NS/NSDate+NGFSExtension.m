@@ -1,12 +1,12 @@
 //
-//  NSDate+FSExtension.m
+//  NSDate+NGFSExtension.m
 //  Pods
 //
 //  Created by Wenchao Ding on 29/1/15.
 //
 //
 
-#import "NSDate+FSExtension.h"
+#import "NSDate+NGFSExtension.h"
 
 @implementation NSDate (NGFSExtension)
 
@@ -298,7 +298,7 @@
 @end
 
 
-@implementation NSCalendar (FSExtension)
+@implementation NSCalendar (NGFSExtension)
 
 + (instancetype)ng_fs_sharedCalendar
 {
@@ -313,7 +313,7 @@
 @end
 
 
-@implementation NSDateFormatter (FSExtension)
+@implementation NSDateFormatter (NGFSExtension)
 
 + (instancetype)ng_fs_sharedDateFormatter
 {
@@ -327,7 +327,7 @@
 
 @end
 
-@implementation NSDateComponents (FSExtension)
+@implementation NSDateComponents (NGFSExtension)
 
 + (instancetype)ng_fs_sharedDateComponents
 {
