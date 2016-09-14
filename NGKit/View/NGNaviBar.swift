@@ -8,19 +8,19 @@
 
 import UIKit
 
-public class NGNaviBar: UIView {
+open class NGNaviBar: UIView {
 
     // 标题栏
-    public var labelTitle:UILabel!
+    open var labelTitle:UILabel!
     // 左侧按钮
-    public var buttonLeft:UIButton!
+    open var buttonLeft:UIButton!
     // 右侧按钮
-    public var buttonRight:UIButton!
+    open var buttonRight:UIButton!
     // 右侧按钮2
-    public var buttonRight2nd:UIButton!
+    open var buttonRight2nd:UIButton!
     
     /// 左侧返回按钮图标
-    public static var leftButtonImage:UIImage?;
+    open static var leftButtonImage:UIImage?;
     
     // MARK: 外部接口
     
@@ -29,7 +29,7 @@ public class NGNaviBar: UIView {
      */
     public init()
     {
-        let rect = CGRectMake(0, 0, UIScreen.ng_width(), 64)
+        let rect = CGRect(x: 0, y: 0, width: UIScreen.ng_width(), height: 64)
         super.init(frame: rect)
         p_init(with: rect)
     }
@@ -43,33 +43,33 @@ public class NGNaviBar: UIView {
     /**
      将按钮变成带灰底的圆形按钮
      */
-    public func makeButtonRound()
+    open func makeButtonRound()
     {
-        if !buttonLeft.hidden
+        if !buttonLeft.isHidden
         {
-            let bkgLeft = UIView(frame: CGRectMake(11, 26, 32, 32))
+            let bkgLeft = UIView(frame: CGRect(x: 11, y: 26, width: 32, height: 32))
             addSubview(bkgLeft)
             bkgLeft.ng_shapeCornerAll(16)
             bkgLeft.backgroundColor = UIColor.init(white: 0, alpha: 0.6)
-            bringSubviewToFront(buttonLeft)
+            bringSubview(toFront: buttonLeft)
         }
         
-        if !buttonRight.hidden
+        if !buttonRight.isHidden
         {
-            bkgRight = UIView(frame: CGRectMake(frame.width - 11 - 32, 26, 32, 32))
+            bkgRight = UIView(frame: CGRect(x: frame.width - 11 - 32, y: 26, width: 32, height: 32))
             addSubview(bkgRight)
             bkgRight.ng_shapeCornerAll(16)
             bkgRight.backgroundColor = UIColor.init(white: 0, alpha: 0.6)
-            bringSubviewToFront(buttonRight)
+            bringSubview(toFront: buttonRight)
         }
         
-        if !buttonRight2nd.hidden
+        if !buttonRight2nd.isHidden
         {
-            let bkgRight2 = UIView(frame: CGRectMake(frame.width - 102 - 32, 26, 32, 32))
+            let bkgRight2 = UIView(frame: CGRect(x: frame.width - 102 - 32, y: 26, width: 32, height: 32))
             addSubview(bkgRight2)
             bkgRight2.ng_shapeCornerAll(16)
             bkgRight2.backgroundColor = UIColor.init(white: 0, alpha: 0.6)
-            bringSubviewToFront(buttonRight2nd)
+            bringSubview(toFront: buttonRight2nd)
         }
     }
     
@@ -78,11 +78,11 @@ public class NGNaviBar: UIView {
      
      - parameter alpha: 透明度
      */
-    public func makeAlpha(with alpha:CGFloat)
+    open func makeAlpha(with alpha:CGFloat)
     {
-        background.backgroundColor = background.backgroundColor?.colorWithAlphaComponent(alpha)
-        line.backgroundColor = line.backgroundColor?.colorWithAlphaComponent(alpha)
-        labelTitle.textColor = labelTitle.textColor?.colorWithAlphaComponent(alpha)
+        background.backgroundColor = background.backgroundColor?.withAlphaComponent(alpha)
+        line.backgroundColor = line.backgroundColor?.withAlphaComponent(alpha)
+        labelTitle.textColor = labelTitle.textColor?.withAlphaComponent(alpha)
     }
     
     /**
@@ -90,10 +90,10 @@ public class NGNaviBar: UIView {
      
      - parameter visible: 是否可见
      */
-    public func setRightButtonVisible(with visible:Bool)
+    open func setRightButtonVisible(with visible:Bool)
     {
-        buttonRight.hidden = !visible
-        bkgRight.hidden = !visible
+        buttonRight.isHidden = !visible
+        bkgRight.isHidden = !visible
     }
 
     // MARK:
@@ -102,49 +102,49 @@ public class NGNaviBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var background:UIView!
-    private var bkgRight:UIView!
-    private var line:UIView!
+    fileprivate var background:UIView!
+    fileprivate var bkgRight:UIView!
+    fileprivate var line:UIView!
 
-    private func p_init(with frame:CGRect)
+    fileprivate func p_init(with frame:CGRect)
     {
-        background = UIView(frame: CGRectMake(0, 0, frame.width, frame.height))
+        background = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         addSubview(background)
         
         // 设置背景色
         background.backgroundColor = UIColor.ngColorNaviBackground()
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         
         // 标题
-        labelTitle = UILabel(frame: CGRectMake(60, 20, UIScreen.ng_width() - 120, 44))
+        labelTitle = UILabel(frame: CGRect(x: 60, y: 20, width: UIScreen.ng_width() - 120, height: 44))
         addSubview(labelTitle)
         
         // 左侧按钮
-        buttonLeft = UIButton(frame: CGRectMake(5, 20, 44, 44))
+        buttonLeft = UIButton(frame: CGRect(x: 5, y: 20, width: 44, height: 44))
         addSubview(buttonLeft)
         buttonLeft.imageEdgeInsets = UIEdgeInsetsMake(6, 6, 6, 6)
         
         // 右侧第一个按钮
-        buttonRight = UIButton(frame: CGRectMake(frame.width - 44 - 5, 20, 44, 44))
+        buttonRight = UIButton(frame: CGRect(x: frame.width - 44 - 5, y: 20, width: 44, height: 44))
         addSubview(buttonRight)
         buttonRight.imageEdgeInsets = UIEdgeInsetsMake(6, 6, 6, 6)
         
         // 右侧第二个按钮
-        buttonRight2nd = UIButton(frame: CGRectMake(frame.width - 44 - 64, 20, 44, 44))
+        buttonRight2nd = UIButton(frame: CGRect(x: frame.width - 44 - 64, y: 20, width: 44, height: 44))
         addSubview(buttonRight2nd)
         buttonRight2nd.imageEdgeInsets = UIEdgeInsetsMake(6, 6, 6, 6)
         
-        buttonRight2nd.hidden = true
-        buttonLeft.hidden = true
-        buttonRight.hidden = true
+        buttonRight2nd.isHidden = true
+        buttonLeft.isHidden = true
+        buttonRight.isHidden = true
 
-        labelTitle.textAlignment = .Center
-        labelTitle.font = UIFont.systemFontOfSize(20)
-        labelTitle.textColor = UIColor.blackColor()
+        labelTitle.textAlignment = .center
+        labelTitle.font = UIFont.systemFont(ofSize: 20)
+        labelTitle.textColor = UIColor.black
         
-        buttonLeft.setImage(NGNaviBar.leftButtonImage, forState: .Normal)
+        buttonLeft.setImage(NGNaviBar.leftButtonImage, for: UIControlState())
         
-        line = UIView(frame: CGRectMake(0, frame.height - 1, UIScreen.ng_width(), 1))
+        line = UIView(frame: CGRect(x: 0, y: frame.height - 1, width: UIScreen.ng_width(), height: 1))
         line.backgroundColor = UIColor.ngColorNaviLine()
         addSubview(line)
     }

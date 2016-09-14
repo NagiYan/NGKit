@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class NGToastView : UILabel
+open class NGToastView : UILabel
 {
-    private static var delayCount = 0.0;
+    fileprivate static var delayCount = 0.0;
     
     /**
      在父视图上显示
@@ -20,28 +20,28 @@ public class NGToastView : UILabel
      - parameter second: 延时时间
      - parameter pos:    显示位置 距底部的距离
      */
-    public static func show(parent view:UIView, text:String, delay second:Double = 0.0, bottom pos:Float = 150)
+    open static func show(parent view:UIView, text:String, delay second:Double = 0.0, bottom pos:Float = 150)
     {
         let toast = NGToastView(text: text, delay: second)
         view.addSubview(toast)
         
-        toast.layer.borderColor = UIColor.grayColor().CGColor
-        toast.backgroundColor = UIColor.blackColor()
-        toast.textColor = UIColor.whiteColor()
-        toast.font = UIFont.systemFontOfSize(18)
-        toast.textAlignment = .Center
+        toast.layer.borderColor = UIColor.gray.cgColor
+        toast.backgroundColor = UIColor.black
+        toast.textColor = UIColor.white
+        toast.font = UIFont.systemFont(ofSize: 18)
+        toast.textAlignment = .center
         toast.ng_shapeCornerAll(10)
-        toast.userInteractionEnabled = false;
+        toast.isUserInteractionEnabled = false;
         toast.numberOfLines = 0;
         
-        let contentHeight = UIFont.systemFontOfSize(18).ng_height(for: text, max: view.frame.width - 80)
+        let contentHeight = UIFont.systemFont(ofSize: 18).ng_height(for: text as NSString, max: view.frame.width - 80)
         
-        toast.frame = CGRectMake(30
-            , view.frame.height - CGFloat(contentHeight - 40.0 - pos)
-            , view.frame.width - 60
-            , CGFloat(contentHeight + 40.0));
+        toast.frame =  CGRect(x: 30,
+                              y: view.frame.height - CGFloat(contentHeight - 40.0 - pos),
+                              width: view.frame.width - 60,
+                              height: CGFloat(contentHeight + 40.0))
         
-        if view.isKindOfClass(UIScrollView.self)
+        if view is UIScrollView
         {
             toast.frame.origin.x = toast.frame.origin.x + (view as! UIScrollView).contentOffset.x
             toast.frame.origin.y = toast.frame.origin.y + (view as! UIScrollView).contentOffset.y
@@ -63,7 +63,7 @@ public class NGToastView : UILabel
         
         self.text = text
         self.alpha = 0.0
-        performSelector(#selector(NGToastView.p_displayToast(_:)), withObject: nil, afterDelay: delay)
+        perform(#selector(NGToastView.p_displayToast(_:)), with: nil, afterDelay: delay)
         
     }
 
@@ -75,7 +75,7 @@ public class NGToastView : UILabel
      
      - parameter object: 参数
      */
-    @objc private func p_displayToast(object:AnyObject)
+    @objc fileprivate func p_displayToast(_ object:AnyObject)
     {
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(0.5)
@@ -83,7 +83,7 @@ public class NGToastView : UILabel
         alpha = 0.8
         UIView.commitAnimations()
         
-        performSelector(#selector(NGToastView.p_dismissToast(_:)), withObject: nil, afterDelay: 1.5)
+        perform(#selector(NGToastView.p_dismissToast(_:)), with: nil, afterDelay: 1.5)
     }
     
     /**
@@ -91,13 +91,13 @@ public class NGToastView : UILabel
      
      - parameter object: 参数
      */
-    @objc private func p_dismissToast(object:AnyObject)
+    @objc fileprivate func p_dismissToast(_ object:AnyObject)
     {
         NGToastView.delayCount -= 1
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(0.5)
         UIView.setAnimationDelegate(self)
-        UIView.setAnimationDidStopSelector(#selector(NGToastView.p_didDismiss(_:)))
+        UIView.setAnimationDidStop(#selector(NGToastView.p_didDismiss(_:)))
         alpha = 0.0
         UIView.commitAnimations()
     }
@@ -107,7 +107,7 @@ public class NGToastView : UILabel
      
      - parameter object: 参数
      */
-    @objc private func p_didDismiss(object:AnyObject)
+    @objc fileprivate func p_didDismiss(_ object:AnyObject)
     {
         removeFromSuperview()
     }

@@ -20,8 +20,8 @@ public extension UIFont{
      */
     func ng_size(for string:NSString, max width:CGFloat = 320) -> CGSize
     {
-        return string.boundingRectWithSize(CGSizeMake(width, CGFloat(Int.max))
-            , options: NSStringDrawingOptions([.UsesLineFragmentOrigin, .UsesFontLeading])
+        return string.boundingRect(with: CGSize(width: width, height: CGFloat(Int.max))
+            , options: NSStringDrawingOptions([.usesLineFragmentOrigin, .usesFontLeading])
             , attributes: [NSFontAttributeName:self]
             , context: nil).size
     }
@@ -36,8 +36,8 @@ public extension UIFont{
      */
     static func ng_size(forAttribute string:NSAttributedString, max width:CGFloat = 320) -> CGSize
     {
-        return string.boundingRectWithSize(CGSizeMake(width, CGFloat(Int.max))
-            , options: NSStringDrawingOptions([.UsesLineFragmentOrigin, .UsesFontLeading])
+        return string.boundingRect(with: CGSize(width: width, height: CGFloat(Int.max))
+            , options: NSStringDrawingOptions([.usesLineFragmentOrigin, .usesFontLeading])
             , context: nil).size
     }
     

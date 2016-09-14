@@ -8,17 +8,17 @@
 
 import Foundation
 
-public extension NSDate {
+public extension Date {
     
     /**
      仅返回当天的年月日
      
      - returns: 仅包含年月的日期
      */
-    static func ng_today() -> NSDate
+    static func ng_today() -> Date
     {
-        let today = NSDate()
-        let date = NSDate.ng_fs_dateWithYear(today.ng_fs_year, month: today.ng_fs_month, day: today.ng_fs_day)
+        let today = Date()
+        let date = Date.ng_fs_dateWith(year: today.ng_fs_year, month: today.ng_fs_month, day: today.ng_fs_day)
         return date
     }
     
@@ -27,9 +27,9 @@ public extension NSDate {
      
      - returns: 仅包含年月的日期
      */
-    func ng_date() -> NSDate
+    func ng_date() -> Date
     {
-        let date = NSDate.ng_fs_dateWithYear(self.ng_fs_year, month: self.ng_fs_month, day: self.ng_fs_day)
+        let date = Date.ng_fs_dateWith(year: self.ng_fs_year, month: self.ng_fs_month, day: self.ng_fs_day)
         return date
     }
     
@@ -40,8 +40,8 @@ public extension NSDate {
      */
     func ng_isToday() -> Bool
     {
-        let today = NSDate.ng_today()
-        let timeInterval = self.timeIntervalSinceDate(today)
+        let today = Date.ng_today()
+        let timeInterval = self.timeIntervalSince(today)
         return timeInterval < 24*60*60*1000 && timeInterval >= 0
     }
     
@@ -52,7 +52,7 @@ public extension NSDate {
      */
     func ng_lastMonth() -> Int
     {
-        return self.ng_fs_dateBySubtractingMonths(1).ng_fs_month
+        return self.ng_fs_dateBySubtracting(months: 1).ng_fs_month
     }
     
     /**
@@ -62,7 +62,7 @@ public extension NSDate {
      */
     func ng_howOld() -> Int
     {
-       return NSDate().ng_fs_yearsFrom(self)
+       return Date().ng_fs_yearsFrom(date: self)
     }
     
 }

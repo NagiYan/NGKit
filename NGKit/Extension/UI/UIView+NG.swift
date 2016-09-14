@@ -13,7 +13,7 @@ public extension UIView {
     
     //MARK: 形状相关
     
-    private static let ngHoldTag = 65535
+    fileprivate static let ngHoldTag = 65535
     
     /**
      圆角函数，能指定特定几个角
@@ -23,10 +23,10 @@ public extension UIView {
      */
     func ng_shapeCorner(with corners:UIRectCorner, radius:CGFloat)
     {
-        let maskPath = UIBezierPath.init(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSizeMake(radius, radius))
+        let maskPath = UIBezierPath.init(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = self.bounds
-        maskLayer.path = maskPath.CGPath
+        maskLayer.path = maskPath.cgPath
         self.layer.mask = maskLayer
     }
     
@@ -35,7 +35,7 @@ public extension UIView {
      
      - parameter radius: 圆角半径
      */
-    func ng_shapeCornerAll(radius:CGFloat)
+    func ng_shapeCornerAll(_ radius:CGFloat)
     {
         self.layer.cornerRadius = radius;
         self.layer.masksToBounds = true;
@@ -48,7 +48,7 @@ public extension UIView {
      - parameter image: 遮罩图片
      - parameter color: 背景颜色
      */
-    func ng_shapeCornerAll(with image:UIImage, background color:UIColor = UIColor.whiteColor())
+    func ng_shapeCornerAll(with image:UIImage, background color:UIColor = UIColor.white)
     {
         var shiled = self.viewWithTag(UIView.ngHoldTag) as? UIImageView
         if shiled == nil
@@ -59,7 +59,7 @@ public extension UIView {
         }
         shiled!.frame = self.bounds
         shiled!.tintColor = color
-        shiled!.image = image.imageWithRenderingMode(.AlwaysTemplate)
+        shiled!.image = image.withRenderingMode(.alwaysTemplate)
         
     }
 
@@ -69,15 +69,15 @@ public extension UIView {
      
      - parameter color: 虚线颜色
      */
-    func ng_shapeDashLineHorizontal(color:UIColor)
+    func ng_shapeDashLineHorizontal(_ color:UIColor)
     {
         let shapeLayer = CAShapeLayer()
         shapeLayer.bounds = bounds
         shapeLayer.position = center
-        shapeLayer.fillColor = color.CGColor
+        shapeLayer.fillColor = color.cgColor
         shapeLayer.fillRule = kCAFillRuleEvenOdd
         
-        shapeLayer.strokeColor = color.CGColor
+        shapeLayer.strokeColor = color.cgColor
         shapeLayer.lineJoin = kCALineJoinRound
         shapeLayer.lineCap = kCALineCapRound
         
@@ -86,11 +86,12 @@ public extension UIView {
         
         // 线的宽度 每条线的间距
         shapeLayer.lineDashPhase = 0.5
-        shapeLayer.lineDashPattern = [0.1, 2*bounds.width]
+        shapeLayer.lineDashPattern = [0.1, NSNumber.init(value: Float(2*bounds.width))]
         
-        let path = CGPathCreateMutable()
-        CGPathMoveToPoint(path, nil, 0, bounds.height/2)
-        CGPathAddLineToPoint(path, nil, bounds.width, bounds.height/2)
+        let path = CGMutablePath()
+
+        path.move(to: CGPoint(x: 0, y: bounds.height/2))
+        path.addLine(to: CGPoint(x: bounds.width, y: bounds.height/2))
         
         shapeLayer.path = path
         layer.addSublayer(shapeLayer)
@@ -99,30 +100,30 @@ public extension UIView {
     /**
      颜色渐变
      */
-    func ng_shapeTransparentGradientTopBottom(colorArray:Array<UIColor> = [RGBA(33, g: 33, b: 33, a: 0), RGBA(1, g: 1, b: 1, a: 1)]
+    func ng_shapeTransparentGradientTopBottom(_ colorArray:Array<UIColor> = [RGBA(33, g: 33, b: 33, a: 0), RGBA(1, g: 1, b: 1, a: 1)]
                                              , locations:Array<CGFloat> = [0.0, 1.0])
     {
         let headerLayer = CAGradientLayer()
         headerLayer.colors = colorArray
-        headerLayer.locations = locations
+        headerLayer.locations = locations as [NSNumber]?
         headerLayer.frame = bounds
-        layer.insertSublayer(headerLayer, atIndex: 0)
+        layer.insertSublayer(headerLayer, at: 0)
     }
     
     /**
      颜色渐变
      */
-    func ng_shapeTransparentGradientLeftRight(colorArray:Array<UIColor> = [RGBA(33, g: 33, b: 33, a: 0), RGBA(1, g: 1, b: 1, a: 1)]
+    func ng_shapeTransparentGradientLeftRight(_ colorArray:Array<UIColor> = [RGBA(33, g: 33, b: 33, a: 0), RGBA(1, g: 1, b: 1, a: 1)]
                                              , locations:Array<CGFloat> = [0.0, 1.0])
     {
         let headerLayer = CAGradientLayer()
         headerLayer.colors = colorArray
         // 颜色分布比例，数量与颜色数相同
-        headerLayer.locations = locations
-        headerLayer.startPoint = CGPointMake(0, 0.5)
-        headerLayer.endPoint = CGPointMake(1, 0.5)
+        headerLayer.locations = locations as [NSNumber]?
+        headerLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        headerLayer.endPoint = CGPoint(x: 1, y: 0.5)
         headerLayer.frame = bounds
-        layer.insertSublayer(headerLayer, atIndex: 0)
+        layer.insertSublayer(headerLayer, at: 0)
     }
     
     //MARK: 子视图相关
@@ -135,7 +136,6 @@ public extension UIView {
         {
             subviews[0].removeFromSuperview()
         }
-        self.dynamicType
     }
     
     /**
@@ -143,11 +143,11 @@ public extension UIView {
      
      - parameter except: 例外的类型
      */
-    func ng_freeSubViews(except:String)
+    func ng_freeSubViews(_ except:String)
     {
         for view in subviews
         {
-            if except == NSStringFromClass(view.dynamicType)
+            if except == NSStringFromClass(type(of: view))
             {
                 continue
             }
@@ -193,7 +193,7 @@ public extension UIView {
     {
         for view in subviews
         {
-            if view.tag == tag && NSStringFromClass(view.dynamicType) == type
+            if view.tag == tag && NSStringFromClass(type(of: view)) == type
             {
                 return view
             }
@@ -240,12 +240,12 @@ public extension UIView {
     {
         UIGraphicsBeginImageContext(bounds.size)
         let context = UIGraphicsGetCurrentContext()
-        CGContextSaveGState(context)
+        context?.saveGState()
         UIRectClip(bounds)
-        layer.renderInContext(context!)
+        layer.render(in: context!)
         let result = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return result
+        return result!
     }
     
     //MARK: 其它
@@ -260,11 +260,11 @@ public extension UIView {
         var target:UIResponder? = self as UIResponder
         while target != nil
         {
-            if target.dynamicType == UIViewController.self
+            if type(of: target) == UIViewController.self
             {
                 break
             }
-            target = target?.nextResponder()
+            target = target?.next
         }
         return target as? UIViewController
     }

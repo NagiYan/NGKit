@@ -13,13 +13,13 @@ public extension UIScreen{
     
     static func ng_width() -> CGFloat
     {
-        struct ngStatic{ static let width = UIScreen.mainScreen().bounds.size.width }
+        struct ngStatic{ static let width = UIScreen.main.bounds.size.width }
         return ngStatic.width
     }
     
     static func ng_height() -> CGFloat
     {
-        struct ngStatic{ static let height = UIScreen.mainScreen().bounds.size.height }
+        struct ngStatic{ static let height = UIScreen.main.bounds.size.height }
         return ngStatic.height
     }
 }

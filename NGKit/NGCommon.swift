@@ -14,7 +14,7 @@ import UIKit
  
  - parameter message: 消息内容
  */
-public func NSLogEx<T>(message:T, file:String = "\(#file)", line:String = "\(#line)", column:String = "\(#column)", function:String = "\(#function)")
+public func NSLogEx<T>(_ message:T, file:String = "\(#file)", line:String = "\(#line)", column:String = "\(#column)", function:String = "\(#function)")
 {
     #if !DEBUG
         NSLog("\(file)(\(line),\(column)) \(function) : \(message)")
@@ -22,9 +22,9 @@ public func NSLogEx<T>(message:T, file:String = "\(#file)", line:String = "\(#li
 }
 
 // 局部scope
-public func local(closure: ()->()) {closure()}
+public func local(_ closure: ()->()) {closure()}
 
-public func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat)->UIColor { return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a) }
+public func RGBA (_ r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat)->UIColor { return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a) }
 
 
 /**
@@ -33,7 +33,7 @@ public func RGBA (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat)->UIColor { return 
  - parameter process:  要执行的代码块
  - parameter complete: ms数
  */
-public func ng_performance(process:()->(), complete:(Double)->())
+public func ng_performance(_ process:()->(), complete:(Double)->())
 {
     var t0 = timeval(), t1 = timeval()
     gettimeofday(&t0, nil)
@@ -43,7 +43,7 @@ public func ng_performance(process:()->(), complete:(Double)->())
     complete(ms)
 }
 
-public func ng_performance(process:()->())
+public func ng_performance(_ process:()->())
 {
     var t0 = timeval(), t1 = timeval()
     gettimeofday(&t0, nil)
@@ -63,8 +63,8 @@ public func ng_performance(process:()->())
  
  - returns: 结果
  */
-@warn_unused_result
-public func ng_find<T>(in array:Array<T>, @noescape isSeparator:(T) throws -> Bool) rethrows -> T?
+
+public func ng_find<T>(in array:Array<T>, isSeparator: (T) throws -> Bool) rethrows -> T?
 {
     let filted = try array.filter { (item) -> Bool in
         return (try isSeparator(item))

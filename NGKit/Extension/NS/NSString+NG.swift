@@ -10,16 +10,16 @@ import Foundation
 
 public extension NSString{
 
-    private static let ngMobile = "^1[3578]\\d{9}$"
-    private static let ngNumberAlpha = "^(?=.*[0-9].*)(?=.*[a-zA-Z].*).{6,20}$"
-    private static let ngNumberSymbol = "^(?=.*[0-9].*)(?=.*[-_.=;:!@#$%^&*()+/?><].*).{6,20}$"
-    private static let ngAlphaSymbol = "^(?=.*[a-zA-Z].*)(?=.*[-_.;:=!@#$%^&*()+/?><].*).{6,20}$"
-    private static let ngHttp = "^([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~/])+$"
+    fileprivate static let ngMobile = "^1[3578]\\d{9}$"
+    fileprivate static let ngNumberAlpha = "^(?=.*[0-9].*)(?=.*[a-zA-Z].*).{6,20}$"
+    fileprivate static let ngNumberSymbol = "^(?=.*[0-9].*)(?=.*[-_.=;:!@#$%^&*()+/?><].*).{6,20}$"
+    fileprivate static let ngAlphaSymbol = "^(?=.*[a-zA-Z].*)(?=.*[-_.;:=!@#$%^&*()+/?><].*).{6,20}$"
+    fileprivate static let ngHttp = "^([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~/])+$"
     
-    private func ng_evaluate(with regex:String) -> Bool
+    fileprivate func ng_evaluate(with regex:String) -> Bool
     {
         let regextestmobile = NSPredicate.init(format: "SELF MATCHES %@", regex)
-        return regextestmobile.evaluateWithObject(self)
+        return regextestmobile.evaluate(with: self)
     }
     
     /**
@@ -53,7 +53,7 @@ public extension NSString{
     }
     
     
-    private static let ngHex:Array<String> = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
+    fileprivate static let ngHex:Array<String> = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
     /**
      将字符转化为16进制
      'abz' -> '00610062007A
@@ -65,16 +65,16 @@ public extension NSString{
         
         for index in 0..<length
         {
-            let nChar = characterAtIndex(index)
+            let nChar = character(at: index)
             let v1 = (Int)(0x0F & nChar);
             let v2 = (Int)(0x0F & (nChar>>4));
             let v3 = (Int)(0x0F & (nChar>>8));
             let v4 = (Int)(0x0F & (nChar>>12));
             let hex = "\(NSString.ngHex[v4])\(NSString.ngHex[v3])\(NSString.ngHex[v2])\(NSString.ngHex[v1])"
-            result = result.stringByAppendingString(hex)
+            result = result + hex
         }
         
-        return result
+        return result as NSString
     }
     
 //    #import <CommonCrypto/CommonCrypto.h>

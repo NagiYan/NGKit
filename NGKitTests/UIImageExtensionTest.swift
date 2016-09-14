@@ -24,16 +24,16 @@ class UIImageExtensionTest: XCTestCase {
     }
     
     func testSize() {
-        let size = CGSizeMake(100, 200)
+        let size = CGSize(width: 100, height: 200)
         
         UIGraphicsBeginImageContext(size)
         let context = UIGraphicsGetCurrentContext();
-        CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor);
-        CGContextFillRect(context, CGRect.init(origin: CGPointMake(0, 0), size: size));
+        context!.setFillColor(UIColor.white.cgColor);
+        context!.fill(CGRect.init(origin: CGPoint(x: 0, y: 0), size: size));
         let image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext()
         
-        XCTAssertEqual(size, image.ng_thumbnail(with: CGSize(width: 200, height: 200)).size)
-        XCTAssertEqual(CGSizeMake(50, 50), image.ng_thumbnail(with: CGSizeMake(50, 50)).size)
+        XCTAssertEqual(size, image?.ng_thumbnail(with: CGSize(width: 200, height: 200)).size)
+        XCTAssertEqual(CGSize(width: 50, height: 50), image?.ng_thumbnail(with: CGSize(width: 50, height: 50)).size)
     }
 }

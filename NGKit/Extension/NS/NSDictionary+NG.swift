@@ -17,10 +17,10 @@ public extension NSDictionary
      */
     func ng_jsonStringEncoded() -> String?
     {
-        if NSJSONSerialization.isValidJSONObject(self)
+        if JSONSerialization.isValidJSONObject(self)
         {
-            let jsonData = try! NSJSONSerialization.dataWithJSONObject(self, options: .PrettyPrinted)
-            let json = String.init(data: jsonData, encoding: NSUTF8StringEncoding)
+            let jsonData = try! JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+            let json = String.init(data: jsonData, encoding: String.Encoding.utf8)
             return json
         }
         return nil

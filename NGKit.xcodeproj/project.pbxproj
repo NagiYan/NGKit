@@ -25,8 +25,6 @@
 		217977EF1D7537F900DFE4C2 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977BD1D7537F900DFE4C2 /* CCLocationManager.m */; };
 		217977F01D7537F900DFE4C2 /* CLLocation+YCLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977BE1D7537F900DFE4C2 /* CLLocation+YCLocation.h */; };
 		217977F11D7537F900DFE4C2 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977BF1D7537F900DFE4C2 /* CLLocation+YCLocation.m */; };
-		217977F21D7537F900DFE4C2 /* NSDate+NGFSExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977C21D7537F900DFE4C2 /* NSDate+NGFSExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		217977F31D7537F900DFE4C2 /* NSDate+NGFSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977C31D7537F900DFE4C2 /* NSDate+NGFSExtension.m */; };
 		217977F41D7537F900DFE4C2 /* NSDate+NG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217977C41D7537F900DFE4C2 /* NSDate+NG.swift */; };
 		217977F51D7537F900DFE4C2 /* NSFileManager+NG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217977C51D7537F900DFE4C2 /* NSFileManager+NG.swift */; };
 		217977F61D7537F900DFE4C2 /* NSObject+NG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217977C61D7537F900DFE4C2 /* NSObject+NG.swift */; };
@@ -56,6 +54,7 @@
 		217978111D7537F900DFE4C2 /* ReportTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977E41D7537F900DFE4C2 /* ReportTitleView.m */; };
 		217978121D7537F900DFE4C2 /* TBAnimationButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977E51D7537F900DFE4C2 /* TBAnimationButton.h */; };
 		217978131D7537F900DFE4C2 /* TBAnimationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977E61D7537F900DFE4C2 /* TBAnimationButton.m */; };
+		2183F1071D891DB3002CB588 /* NSDate+NGFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2183F1061D891DB3002CB588 /* NSDate+NGFS.swift */; };
 		21F1FAEC1D75523E000F900D /* NGNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1FAEB1D75523E000F900D /* NGNaviBar.swift */; };
 		21F1FAEE1D755BB5000F900D /* NGTimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1FAED1D755BB5000F900D /* NGTimePickerView.swift */; };
 /* End PBXBuildFile section */
@@ -92,8 +91,6 @@
 		217977BD1D7537F900DFE4C2 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
 		217977BE1D7537F900DFE4C2 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
 		217977BF1D7537F900DFE4C2 /* CLLocation+YCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+YCLocation.m"; sourceTree = "<group>"; };
-		217977C21D7537F900DFE4C2 /* NSDate+NGFSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NGFSExtension.h"; sourceTree = "<group>"; };
-		217977C31D7537F900DFE4C2 /* NSDate+NGFSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NGFSExtension.m"; sourceTree = "<group>"; };
 		217977C41D7537F900DFE4C2 /* NSDate+NG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+NG.swift"; sourceTree = "<group>"; };
 		217977C51D7537F900DFE4C2 /* NSFileManager+NG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+NG.swift"; sourceTree = "<group>"; };
 		217977C61D7537F900DFE4C2 /* NSObject+NG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+NG.swift"; sourceTree = "<group>"; };
@@ -123,6 +120,7 @@
 		217977E41D7537F900DFE4C2 /* ReportTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportTitleView.m; sourceTree = "<group>"; };
 		217977E51D7537F900DFE4C2 /* TBAnimationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAnimationButton.h; sourceTree = "<group>"; };
 		217977E61D7537F900DFE4C2 /* TBAnimationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAnimationButton.m; sourceTree = "<group>"; };
+		2183F1061D891DB3002CB588 /* NSDate+NGFS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+NGFS.swift"; sourceTree = "<group>"; };
 		21F1FAEB1D75523E000F900D /* NGNaviBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGNaviBar.swift; sourceTree = "<group>"; };
 		21F1FAED1D755BB5000F900D /* NGTimePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGTimePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,8 +225,7 @@
 		217977C11D7537F900DFE4C2 /* NS */ = {
 			isa = PBXGroup;
 			children = (
-				217977C21D7537F900DFE4C2 /* NSDate+NGFSExtension.h */,
-				217977C31D7537F900DFE4C2 /* NSDate+NGFSExtension.m */,
+				2183F1061D891DB3002CB588 /* NSDate+NGFS.swift */,
 				217977C41D7537F900DFE4C2 /* NSDate+NG.swift */,
 				217977C51D7537F900DFE4C2 /* NSFileManager+NG.swift */,
 				217977C61D7537F900DFE4C2 /* NSObject+NG.swift */,
@@ -293,7 +290,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				217977F21D7537F900DFE4C2 /* NSDate+NGFSExtension.h in Headers */,
 				217978021D7537F900DFE4C2 /* SingletonARC.h in Headers */,
 				217977EE1D7537F900DFE4C2 /* CCLocationManager.h in Headers */,
 				217978071D7537F900DFE4C2 /* MKNumberBadgeView.h in Headers */,
@@ -358,14 +354,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = ARIA;
 				TargetAttributes = {
 					217977901D75379F00DFE4C2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					2179779A1D7537A000DFE4C2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -435,7 +433,7 @@
 				217977FE1D7537F900DFE4C2 /* UIView+NG.swift in Sources */,
 				210E57201D8646CF00CE617E /* NSArray+NG.swift in Sources */,
 				217977ED1D7537F900DFE4C2 /* UISearchBar+Blocks.m in Sources */,
-				217977F31D7537F900DFE4C2 /* NSDate+NGFSExtension.m in Sources */,
+				2183F1071D891DB3002CB588 /* NSDate+NGFS.swift in Sources */,
 				217978011D7537F900DFE4C2 /* NGCommon.swift in Sources */,
 				217977F51D7537F900DFE4C2 /* NSFileManager+NG.swift in Sources */,
 			);
@@ -478,8 +476,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -527,8 +527,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -548,6 +550,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -559,6 +562,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -573,6 +577,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "OC-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -580,6 +585,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -593,6 +599,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "OC-Swift.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -603,6 +610,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aria.NGKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -613,6 +621,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aria.NGKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

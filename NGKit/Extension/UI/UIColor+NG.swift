@@ -43,19 +43,19 @@ public extension UIColor {
      
      - returns: UIColor
      */
-    static func ng_colorWith(hexString:String) -> UIColor
+    static func ng_colorWith(_ hexString:String) -> UIColor
     {
-        func colorComponentFrom(string:String, start:Int, length:Int) -> CGFloat
+        func colorComponentFrom(_ string:String, start:Int, length:Int) -> CGFloat
         {
-            let substring = (string as NSString).substringWithRange(NSRange(location: start, length: length))
+            let substring = (string as NSString).substring(with: NSRange(location: start, length: length))
             let fullHex = length == 2 ? substring : "\(substring)\(substring)"
             var hexComponent:UInt32 = 0
-            NSScanner.init(string: fullHex).scanHexInt(&hexComponent)
+            Scanner.init(string: fullHex).scanHexInt32(&hexComponent)
             return CGFloat(hexComponent)
         }
         
-        var colorString = hexString.stringByReplacingOccurrencesOfString("#", withString: "").uppercaseString
-        colorString = colorString.stringByReplacingOccurrencesOfString("0X", withString: "").uppercaseString
+        var colorString = (hexString as NSString).replacingOccurrences(of: "#", with: "").uppercased()
+        colorString = (colorString as NSString).replacingOccurrences(of: "0X", with: "").uppercased()
         
         var a:CGFloat = 1, r:CGFloat, g:CGFloat, b:CGFloat
         
@@ -80,7 +80,7 @@ public extension UIColor {
             g = colorComponentFrom(colorString, start: 2, length: 2)
             b = colorComponentFrom(colorString, start: 4, length: 2)
         default:
-            return blackColor()
+            return black
         }
         
         return RGBA(r, g: g, b: b, a: a)

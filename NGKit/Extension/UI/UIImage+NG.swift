@@ -12,15 +12,41 @@ import CoreImage
 public extension UIImage{
     
     /**
+     改变图片颜色
+     
+     - parameter color: 要变更的颜色
+     - parameter gradient: 是否保留渐变
+     - returns: 变化后的图片
+     */
+    func ng_changeColor(to color:UIColor, with gradient:Bool = true) -> UIImage
+    {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        color.setFill()
+        let bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIRectFill(bounds)
+        if gradient
+        {
+            draw(in: bounds, blendMode: .overlay, alpha: 1.0)
+        }
+        draw(in: bounds, blendMode: .destinationIn, alpha: 1.0)
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result!
+    }
+    
+    /**
      黑白化图片
      
      - returns: 结果
      */
     func ng_toGreyScale() -> UIImage
     {
-        let context = CGBitmapContextCreate(nil, Int(size.width), Int(size.height), 8, 0, CGColorSpaceCreateDeviceGray(), 0)
-        CGContextDrawImage(context, CGRectMake(0, 0, size.width, size.height), CGImage);
-        return UIImage.init(CGImage: CGBitmapContextCreateImage(context)!)
+        return ng_changeColor(to: UIColor.black)
+        
+//        let context = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: 8, bytesPerRow: 0, space: CGColorSpaceCreateDeviceGray(), bitmapInfo: 0)
+//        draw(in: CGRect(x:0, y:0, width:size.width, height:size.height))
+//        CGContextDrawImage(context, CGRect(x:0, y:0, width:size.width, height:size.height), self.cgImage);
+//        return UIImage.init(cgImage: context!.makeImage()!)
     }
     
     /**
@@ -38,9 +64,9 @@ public extension UIImage{
         }
         
         UIGraphicsBeginImageContext(thumbSize)
-        drawInRect(CGRectMake(0, 0, thumbSize.width, thumbSize.height))
+        draw(in: CGRect(x:0, y:0, width:thumbSize.width, height:thumbSize.height))
         let result = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext()
-        return result
+        return result!
     }
 }

@@ -18,7 +18,7 @@ public extension UIWindow{
      */
     static func ng_clipImageCurrent() -> UIImage?
     {
-        let window = UIApplication.sharedApplication().keyWindow
+        let window = UIApplication.shared.keyWindow
         return window?.ng_clipImage()
     }
     
@@ -29,10 +29,10 @@ public extension UIWindow{
      */
     func ng_clipImage() -> UIImage
     {
-        UIGraphicsBeginImageContextWithOptions(CGSizeMake(UIScreen.ng_width(), UIScreen.ng_height()), true, 0);     //设置截屏大小
-        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: UIScreen.ng_width(), height: UIScreen.ng_height()), true, 0);     //设置截屏大小
+        layer.render(in: UIGraphicsGetCurrentContext()!)
         let result = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return result;
+        return result!;
     }
 }

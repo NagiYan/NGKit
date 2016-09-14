@@ -65,7 +65,7 @@ class NSStringExtensionTest: XCTestCase {
         // 将字符转化为16进制 'abz' -> '00610062007A
         let beforeA:NSString = "abz"
         let after:NSString = "00610062007A"
-        XCTAssert(after.isEqualToString(beforeA.ng_toHexString() as String))
+        XCTAssert(after.isEqual(to: beforeA.ng_toHexString() as String))
     }
     
 }

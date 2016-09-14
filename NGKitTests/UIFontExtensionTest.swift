@@ -24,12 +24,12 @@ class UIFontExtensionTest: XCTestCase {
     
     func testFontSize()
     {
-        let font = UIFont.systemFontOfSize(15)
+        let font = UIFont.systemFont(ofSize: 15)
         let string = "test test test test test test test test test test "
 
         let size = UIFont.ng_size(forAttribute: NSAttributedString.init(string: string, attributes: [NSFontAttributeName:font]), max: 100)
-        XCTAssertEqual(302, font.ng_width(for: string, max:10000))
-        XCTAssertEqual(72, font.ng_height(for: string, max: 100))
+        XCTAssertEqual(302, font.ng_width(for: string as NSString, max:10000))
+        XCTAssertEqual(72, font.ng_height(for: string as NSString, max: 100))
         XCTAssertEqual(72, ceil(size.height))
         XCTAssertEqual(91, ceil(size.width))
     }

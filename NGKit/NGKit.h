@@ -16,4 +16,3 @@ FOUNDATION_EXPORT const unsigned char NGKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <NGKit/PublicHeader.h>
 
-#import "NSDate+FSExtension.h"

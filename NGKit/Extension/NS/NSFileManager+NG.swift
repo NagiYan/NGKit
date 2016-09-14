@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension NSFileManager{
+public extension FileManager{
     
     /**
      获取资源文件
@@ -18,9 +18,9 @@ public extension NSFileManager{
      
      - returns: 文件路径
      */
-    static func ng_getFullPathOfResourceFile(name:String, type:String) -> String?
+    static func ng_getFullPathOfResourceFile(_ name:String, type:String) -> String?
     {
-        return NSBundle.mainBundle().pathForResource(name, ofType: type)
+        return Bundle.main.path(forResource: name, ofType: type)
     }
     
     /**
@@ -30,7 +30,7 @@ public extension NSFileManager{
      */
     static func ng_getDirectoryPathCache() -> String
     {
-        return NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        return NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
     }
     
     /**
@@ -40,7 +40,7 @@ public extension NSFileManager{
      */
     static func ng_getDirectoryPathDocument() -> String
     {
-        return NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        return NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
     }
     
     /**
@@ -48,10 +48,10 @@ public extension NSFileManager{
      
      - parameter path: 路径
      */
-    static func ng_makeSurePath(path:String)
+    static func ng_makeSurePath(_ path:String)
     {
-        let fileManager = NSFileManager.defaultManager()
-        try! fileManager.createDirectoryAtPath(path, withIntermediateDirectories: true, attributes: nil)
+        let fileManager = FileManager.default
+        try! fileManager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
     }
     
     /**
@@ -61,7 +61,7 @@ public extension NSFileManager{
      */
     static func ng_fileSize(at path:String) -> Float
     {
-        let attribute = try! NSFileManager.defaultManager().attributesOfItemAtPath(path) as NSDictionary
+        let attribute = try! FileManager.default.attributesOfItem(atPath: path) as NSDictionary
         let size = attribute.fileSize()
         return Float(size)/1024.0/1024.0
     }
@@ -77,29 +77,29 @@ public extension NSFileManager{
     {
         var result:Float = 0.0
         
-        let fileManager = NSFileManager.defaultManager()
-        let isDir:UnsafeMutablePointer<ObjCBool> = UnsafeMutablePointer<ObjCBool>.init(bitPattern: 0)
-        let exist = fileManager.fileExistsAtPath(path, isDirectory: isDir)
+        let fileManager = FileManager.default
+        let isDir:UnsafeMutablePointer<ObjCBool> = UnsafeMutablePointer<ObjCBool>.init(bitPattern: 0)!
+        let exist = fileManager.fileExists(atPath: path, isDirectory: isDir)
         guard exist else
         {
             return result
         }
         
-        if isDir[0]
+        if isDir[0].boolValue
         {
             var result:Float = 0.0
-            if NSFileManager.defaultManager().fileExistsAtPath(path)
+            if FileManager.default.fileExists(atPath: path)
             {
                 // 子目录会摊平
-                for subPath in NSFileManager.defaultManager().subpathsAtPath(path)!
+                for subPath in FileManager.default.subpaths(atPath: path)!
                 {
-                    result += NSFileManager.ng_fileSize(at: (path as NSString).stringByAppendingPathComponent(subPath))
+                    result += FileManager.ng_fileSize(at: (path as NSString).appendingPathComponent(subPath))
                 }
             }
         }
         else
         {
-            result = NSFileManager.ng_fileSize(at: path)
+            result = FileManager.ng_fileSize(at: path)
         }
         
         return result
@@ -110,13 +110,13 @@ public extension NSFileManager{
      
      - parameter path: 路径
      */
-    static func ng_clean(path:String)
+    static func ng_clean(_ path:String)
     {
-        if NSFileManager.defaultManager().fileExistsAtPath(path)
+        if FileManager.default.fileExists(atPath: path)
         {
-            for subPath in NSFileManager.defaultManager().subpathsAtPath(path)!
+            for subPath in FileManager.default.subpaths(atPath: path)!
             {
-                try! NSFileManager.defaultManager().removeItemAtPath((path as NSString).stringByAppendingPathComponent(subPath))
+                try! FileManager.default.removeItem(atPath: (path as NSString).appendingPathComponent(subPath))
             }
         }
     }
