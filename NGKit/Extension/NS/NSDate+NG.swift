@@ -42,9 +42,18 @@ public extension NSDate {
     {
         let today = NSDate.ng_today()
         let timeInterval = self.timeIntervalSinceDate(today)
-        return timeInterval < 24*60*60*1000 && timeInterval > 0
+        return timeInterval < 24*60*60*1000 && timeInterval >= 0
     }
     
+    /**
+     上个月
+     
+     - returns: 上个月
+     */
+    func ng_lastMonth() -> Int
+    {
+        return self.ng_fs_dateBySubtractingMonths(1).ng_fs_month
+    }
     
     /**
      现在多大了

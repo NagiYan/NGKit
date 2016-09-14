@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210E57201D8646CF00CE617E /* NSArray+NG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210E571F1D8646CF00CE617E /* NSArray+NG.swift */; };
+		210E57221D86482B00CE617E /* NSDictionary+NG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210E57211D86482B00CE617E /* NSDictionary+NG.swift */; };
 		217977951D7537A000DFE4C2 /* NGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977941D7537A000DFE4C2 /* NGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2179779C1D7537A000DFE4C2 /* NGKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217977911D75379F00DFE4C2 /* NGKit.framework */; };
 		217977B01D7537EF00DFE4C2 /* NSStringExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217977AB1D7537EF00DFE4C2 /* NSStringExtensionTest.swift */; };
@@ -69,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210E571F1D8646CF00CE617E /* NSArray+NG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+NG.swift"; sourceTree = "<group>"; };
+		210E57211D86482B00CE617E /* NSDictionary+NG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+NG.swift"; sourceTree = "<group>"; };
 		217977911D75379F00DFE4C2 /* NGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		217977941D7537A000DFE4C2 /* NGKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGKit.h; sourceTree = "<group>"; };
 		217977961D7537A000DFE4C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				217977C51D7537F900DFE4C2 /* NSFileManager+NG.swift */,
 				217977C61D7537F900DFE4C2 /* NSObject+NG.swift */,
 				217977C71D7537F900DFE4C2 /* NSString+NG.swift */,
+				210E571F1D8646CF00CE617E /* NSArray+NG.swift */,
+				210E57211D86482B00CE617E /* NSDictionary+NG.swift */,
 			);
 			path = NS;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 				217978131D7537F900DFE4C2 /* TBAnimationButton.m in Sources */,
 				217977FF1D7537F900DFE4C2 /* UIWindow+NG.swift in Sources */,
 				217977EB1D7537F900DFE4C2 /* NSTimer+Blocks.m in Sources */,
+				210E57221D86482B00CE617E /* NSDictionary+NG.swift in Sources */,
 				217977F71D7537F900DFE4C2 /* NSString+NG.swift in Sources */,
 				217977F11D7537F900DFE4C2 /* CLLocation+YCLocation.m in Sources */,
 				217977FA1D7537F900DFE4C2 /* UIImage+NG.swift in Sources */,
@@ -426,6 +433,7 @@
 				217977F91D7537F900DFE4C2 /* UIFont+NG.swift in Sources */,
 				21F1FAEC1D75523E000F900D /* NGNaviBar.swift in Sources */,
 				217977FE1D7537F900DFE4C2 /* UIView+NG.swift in Sources */,
+				210E57201D8646CF00CE617E /* NSArray+NG.swift in Sources */,
 				217977ED1D7537F900DFE4C2 /* UISearchBar+Blocks.m in Sources */,
 				217977F31D7537F900DFE4C2 /* NSDate+NGFSExtension.m in Sources */,
 				217978011D7537F900DFE4C2 /* NGCommon.swift in Sources */,
