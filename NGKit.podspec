@@ -2,8 +2,8 @@
 
 Pod::Spec.new do |s|
   s.name         = "NGKit"
-  s.version      = "0.1.4"
-  s.source       = { :git => "https://github.com/NagiYan/NGKit.git", :tag => "0.1.4" }
+  s.version      = "0.2.0"
+  s.source       = { :git => "https://github.com/NagiYan/NGKit.git", :tag => "0.2.0" }
   s.summary      = "my lib, with some usefull tools, use swift + oc, no dependency on other pods"
   s.description  = <<-DESC
 			Blocks,Device,Extension,Pattern,View, some useful extensions, some view, location services and so on
