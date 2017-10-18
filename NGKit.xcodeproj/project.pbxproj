@@ -55,6 +55,7 @@
 		217978121D7537F900DFE4C2 /* TBAnimationButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977E51D7537F900DFE4C2 /* TBAnimationButton.h */; };
 		217978131D7537F900DFE4C2 /* TBAnimationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977E61D7537F900DFE4C2 /* TBAnimationButton.m */; };
 		2183F1071D891DB3002CB588 /* NSDate+NGFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2183F1061D891DB3002CB588 /* NSDate+NGFS.swift */; };
+		2187FB931DB4BBCE00EDD2BF /* HSQAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2187FB921DB4BBCE00EDD2BF /* HSQAUtils.swift */; };
 		21F1FAEC1D75523E000F900D /* NGNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1FAEB1D75523E000F900D /* NGNaviBar.swift */; };
 		21F1FAEE1D755BB5000F900D /* NGTimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1FAED1D755BB5000F900D /* NGTimePickerView.swift */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,7 @@
 		217977E51D7537F900DFE4C2 /* TBAnimationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAnimationButton.h; sourceTree = "<group>"; };
 		217977E61D7537F900DFE4C2 /* TBAnimationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAnimationButton.m; sourceTree = "<group>"; };
 		2183F1061D891DB3002CB588 /* NSDate+NGFS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+NGFS.swift"; sourceTree = "<group>"; };
+		2187FB921DB4BBCE00EDD2BF /* HSQAUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HSQAUtils.swift; path = Features/HSQAUtils.swift; sourceTree = "<group>"; };
 		21F1FAEB1D75523E000F900D /* NGNaviBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGNaviBar.swift; sourceTree = "<group>"; };
 		21F1FAED1D755BB5000F900D /* NGTimePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGTimePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 		217977931D7537A000DFE4C2 /* NGKit */ = {
 			isa = PBXGroup;
 			children = (
+				2187FB911DB4BBBD00EDD2BF /* Features */,
 				217977B51D7537F900DFE4C2 /* Blocks */,
 				217977BB1D7537F900DFE4C2 /* Device */,
 				217977C01D7537F900DFE4C2 /* Extension */,
@@ -281,6 +284,14 @@
 				217977E61D7537F900DFE4C2 /* TBAnimationButton.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2187FB911DB4BBBD00EDD2BF /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2187FB921DB4BBCE00EDD2BF /* HSQAUtils.swift */,
+			);
+			name = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +430,7 @@
 				217977F11D7537F900DFE4C2 /* CLLocation+YCLocation.m in Sources */,
 				217977FA1D7537F900DFE4C2 /* UIImage+NG.swift in Sources */,
 				217978061D7537F900DFE4C2 /* MBProgressHUD.m in Sources */,
+				2187FB931DB4BBCE00EDD2BF /* HSQAUtils.swift in Sources */,
 				2179780A1D7537F900DFE4C2 /* NBlurView.m in Sources */,
 				217977F41D7537F900DFE4C2 /* NSDate+NG.swift in Sources */,
 				21F1FAEE1D755BB5000F900D /* NGTimePickerView.swift in Sources */,
