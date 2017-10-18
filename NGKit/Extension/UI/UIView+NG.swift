@@ -185,15 +185,15 @@ public extension UIView {
      获取特定标签和类型的子视图
      
      - parameter tag:  特定标签
-     - parameter type: 特定类型
+     - parameter stype: 特定类型
      
      - returns: 结果
      */
-    func ng_getFirstSubView(by tag:Int, and type:String) -> UIView?
+    func ng_getFirstSubView(by tag:Int, and stype:String) -> UIView?
     {
         for view in subviews
         {
-            if view.tag == tag && NSStringFromClass(type(of: view)) == type
+            if view.tag == tag && NSStringFromClass(type(of: view)) == stype
             {
                 return view
             }

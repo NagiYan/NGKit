@@ -22,7 +22,7 @@ public extension UIFont{
     {
         return string.boundingRect(with: CGSize(width: width, height: CGFloat(Int.max))
             , options: NSStringDrawingOptions([.usesLineFragmentOrigin, .usesFontLeading])
-            , attributes: [NSFontAttributeName:self]
+            , attributes: [NSAttributedStringKey.font:self]
             , context: nil).size
     }
     

@@ -1,0 +1,1 @@
+../../../NGKit/NGKit/Pattern/SingletonARC.h

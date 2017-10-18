@@ -19,7 +19,7 @@ public extension NSObject {
         for i in 0 ..< Int(count)
         {
             let ivar = ivars?[i]
-            let name = ivar_getName(ivar)
+            let name = ivar_getName(ivar!)
             if let varName = String(validatingUTF8: name!)
             {
                 result.append(varName)
@@ -37,8 +37,8 @@ public extension NSObject {
         for i in 0 ..< Int(count)
         {
             let property = properties?[i]
-            let name = property_getName(property)
-            if let propertyName = String(validatingUTF8: name!)
+            let name = property_getName(property!)
+            if let propertyName = String(validatingUTF8: name)
             {
                 result.append(propertyName)
             }
