@@ -10,11 +10,11 @@
 @interface NSTimer (Blocks)
 
 + (id)scheduledTimerWithTimeInterval:(NSTimeInterval)inTimeInterval
-                               block:(void (^)())inBlock
+                               block:(void (^)(void))inBlock
                              repeats:(BOOL)inRepeats;
 
 + (id)timerWithTimeInterval:(NSTimeInterval)inTimeInterval
-                      block:(void (^)())inBlock
+                      block:(void (^)(void))inBlock
                     repeats:(BOOL)inRepeats;
 
 @end

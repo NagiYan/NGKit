@@ -55,6 +55,7 @@
 		217978121D7537F900DFE4C2 /* TBAnimationButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 217977E51D7537F900DFE4C2 /* TBAnimationButton.h */; };
 		217978131D7537F900DFE4C2 /* TBAnimationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 217977E61D7537F900DFE4C2 /* TBAnimationButton.m */; };
 		2183F1071D891DB3002CB588 /* NSDate+NGFS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2183F1061D891DB3002CB588 /* NSDate+NGFS.swift */; };
+		2187FB931DB4BBCE00EDD2BF /* HSQAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2187FB921DB4BBCE00EDD2BF /* HSQAUtils.swift */; };
 		21F1FAEC1D75523E000F900D /* NGNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1FAEB1D75523E000F900D /* NGNaviBar.swift */; };
 		21F1FAEE1D755BB5000F900D /* NGTimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1FAED1D755BB5000F900D /* NGTimePickerView.swift */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,7 @@
 		217977E51D7537F900DFE4C2 /* TBAnimationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAnimationButton.h; sourceTree = "<group>"; };
 		217977E61D7537F900DFE4C2 /* TBAnimationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAnimationButton.m; sourceTree = "<group>"; };
 		2183F1061D891DB3002CB588 /* NSDate+NGFS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+NGFS.swift"; sourceTree = "<group>"; };
+		2187FB921DB4BBCE00EDD2BF /* HSQAUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HSQAUtils.swift; path = Features/HSQAUtils.swift; sourceTree = "<group>"; };
 		21F1FAEB1D75523E000F900D /* NGNaviBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGNaviBar.swift; sourceTree = "<group>"; };
 		21F1FAED1D755BB5000F900D /* NGTimePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGTimePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 		217977931D7537A000DFE4C2 /* NGKit */ = {
 			isa = PBXGroup;
 			children = (
+				2187FB911DB4BBBD00EDD2BF /* Features */,
 				217977B51D7537F900DFE4C2 /* Blocks */,
 				217977BB1D7537F900DFE4C2 /* Device */,
 				217977C01D7537F900DFE4C2 /* Extension */,
@@ -283,6 +286,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2187FB911DB4BBBD00EDD2BF /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2187FB921DB4BBCE00EDD2BF /* HSQAUtils.swift */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -354,7 +365,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = ARIA;
 				TargetAttributes = {
 					217977901D75379F00DFE4C2 = {
@@ -419,6 +430,7 @@
 				217977F11D7537F900DFE4C2 /* CLLocation+YCLocation.m in Sources */,
 				217977FA1D7537F900DFE4C2 /* UIImage+NG.swift in Sources */,
 				217978061D7537F900DFE4C2 /* MBProgressHUD.m in Sources */,
+				2187FB931DB4BBCE00EDD2BF /* HSQAUtils.swift in Sources */,
 				2179780A1D7537F900DFE4C2 /* NBlurView.m in Sources */,
 				217977F41D7537F900DFE4C2 /* NSDate+NG.swift in Sources */,
 				21F1FAEE1D755BB5000F900D /* NGTimePickerView.swift in Sources */,
@@ -471,14 +483,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -522,14 +540,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
